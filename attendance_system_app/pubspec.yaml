@@ -62,8 +62,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/images/loginStudent.png
-   - assets/images/loginDoctor.png
+   - assets/images/1.png
+   - assets/images/4.png
+  #- assets/images/loginDoctor.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -79,15 +80,15 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
-  #   - family: Schyler
+  #   - family: OpenSans
   #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
+  #       - asset: assets/fonts/OpenSans-Regular.ttf
+  #       - asset: assets/fonts/OpenSans-Bold.ttf
+  #         weight: 700
+  #   - family: QuickSand
   #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
+  #       - asset: assets/fonts/Quicksand.ttf
+  #       - asset: assets/fonts/Quicksand-Bold.ttf
   #         weight: 700
   #
   # For details regarding fonts from package dependencies,

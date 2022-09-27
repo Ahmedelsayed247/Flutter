@@ -14,18 +14,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      routes: { '/': (context) => const Start_Page(),
+      routes: {
+        '/': (context) => const Start_Page(),
         'student': (context) => Sign_In_Student(),
-        'Doctor': (context) => Sign_In_Doctor()},
+        'Doctor': (context) => Sign_In_Doctor()
+      },
       debugShowCheckedModeBanner: false,
       // title: 'Flutter Demo',
       theme: ThemeData(
 
-       // primarySwatch: Colors.teal,
-      ),
-
+          // primarySwatch: Colors.teal,
+          ),
     );
   }
 }
-
-

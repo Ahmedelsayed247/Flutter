@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widget/widget.dart';
+
 class Start_Page extends StatefulWidget {
   const Start_Page({Key? key}) : super(key: key);
 
@@ -21,29 +23,45 @@ class _Start_PageState extends State<Start_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("welcome"),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: ElevatedButton(
-                  onPressed: () => SelectScren("Student"),
-                  child: const Text("student")),
-            ),
-            const SizedBox(
-              width: 20,
-            ),
-            ElevatedButton(
-              onPressed: () => SelectScren("Doctor"),
-              child: const Text("Doctor"),
-            )
-          ],
-        ),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      body: Container(
+        child: Column(children: [
+          Row(
+            children: [
+              Container(
+                height: 500,
+                width: MediaQuery.of(context).size.width,
+                child: Image.asset("assets/images/4.png"),
+              )
+            ],
+          ),
+
+          // SizedBox(height: 20, ),
+          Row(
+            children: [
+              CustomizedButton(
+                buttonText: "Student",
+                textColor: Colors.white,
+                buttonColor: Colors.black,
+                onPressed: () {
+                  SelectScren("Student");
+                },
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              CustomizedButton(
+                buttonText: "Doctor",
+                textColor: Colors.black,
+                buttonColor: Colors.white,
+                onPressed: () {
+                  SelectScren("Doctor");
+                },
+              ),
+            ],
+          )
+        ]),
       ),
     );
   }

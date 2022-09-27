@@ -17,11 +17,14 @@ class Sign_In_Student extends StatelessWidget {
         body: SingleChildScrollView(
           child: Container(
             width: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-              Colors.blue.shade900,
-              Colors.blue.shade200,
-              Colors.blue.shade900,
+              Colors.red,
+              Colors.green,
+              Colors.blue,
+              // Colors.blue.shade900,
+              // Colors.blue.shade200,
+              // Colors.blue.shade900,
             ])),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +44,7 @@ class Sign_In_Student extends StatelessWidget {
                         height: 10,
                       ),
                       Text(
-                        "Welcome ",
+                        "Welcome Student",
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ],
@@ -116,7 +119,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   obscureText: true,
                   decoration: const InputDecoration(
                     icon: Icon(
-                      Icons.password,
+                      Icons.lock,
                       color: Colors.white,
                     ),
                     labelText: "password",
@@ -147,13 +150,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               borderRadius: BorderRadius.circular(30.0)),
                         ),
                         backgroundColor:
-                            MaterialStateProperty.all(Colors.blue.shade900),
+                            MaterialStateProperty.all(Colors.white),
                       ),
                       onPressed: () {},
                       child: const Text(
                         'Login ',
                         style: TextStyle(
                           fontSize: 30,
+                          color: Colors.black,
                         ),
                       ),
                     ),
