@@ -10,55 +10,57 @@ class _Sign_In_DoctorState extends State<Sign_In_Doctor> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        /* appBar: AppBar(
-          title: const Text('Doctor Login'),
-          centerTitle: true,
-          backgroundColor: Colors.black,
-        ),*/
-        backgroundColor: Colors.black,
-        body: SingleChildScrollView(
-          child: Container(
-            width: double.infinity,
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-              Colors.cyan,
-              Colors.black,
-              Colors.blueAccent,
-              // Colors.blue.shade900,
-              // Colors.blue.shade200,
-              // Colors.blue.shade900,
-            ])),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 80),
-                // #login, #welcome
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Login",
-                        style: TextStyle(color: Colors.black, fontSize: 40),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Welcome Doctor",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ],
+    return SafeArea(
+      child: Scaffold(
+          /* appBar: AppBar(
+            title: const Text('Doctor Login'),
+            centerTitle: true,
+            backgroundColor: Colors.black,
+          ),*/
+          backgroundColor: Colors.blue,
+          body: SingleChildScrollView(
+            child: Container(
+              width: double.infinity,
+              decoration:  BoxDecoration(
+                  gradient: LinearGradient(begin: Alignment.topCenter, colors: [
+                    Colors.blue.shade100,
+                    Colors.blue.shade900,
+                    Colors.blue,
+                // Colors.blue.shade900,
+                // Colors.blue.shade200,
+                // Colors.blue.shade900,
+              ])),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 80),
+                  // #login, #welcome
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Login",
+                          style: TextStyle(color: Colors.white, fontSize: 40),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Welcome Doctor",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                const SizedBox(height: 20),
-                const MyStatefulWidget(),
-              ],
+                  const SizedBox(height: 20),
+                  const MyStatefulWidget(),
+                ],
+              ),
             ),
-          ),
-        ));
+          )),
+    );
   }
 }
 
@@ -80,19 +82,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       alignment: Alignment.center,
       width: MediaQuery.of(context).size.width,
       // height:MediaQuery.of(context).size.height ,
-      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      margin: const EdgeInsets.symmetric( horizontal: 10,vertical: 50),
       padding: const EdgeInsets.all(20),
 
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
           backgroundBlendMode: BlendMode.luminosity,
           borderRadius: BorderRadius.all(Radius.circular(60)),
-          //color: Color.fromARGB(255, 100, 137, 148),
-          gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-            Colors.cyan,
-            Colors.white,
-            Colors.white12,
-            Colors.black26,
-          ])),
+        color: Colors.white30,
+         ),
       child: Form(
         key: _formKey,
         child: Padding(
@@ -103,19 +100,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: TextFormField(
+
                   controller: email,
                   decoration: const InputDecoration(
                     icon: Icon(
-                      Icons.person,
+                      Icons.email,
                       color: Colors.white,
                     ),
-                    labelText: "ID",
+                    labelText: "Email",
                     labelStyle: TextStyle(color: Colors.white, fontSize: 25),
-                    hintText: 'Enter your ID',
+                    hintText: 'Enter your Email',
                   ),
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your ID';
+                      return 'Please enter your Email';
                     }
                     return null;
                   },
@@ -160,14 +158,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               borderRadius: BorderRadius.circular(30.0)),
                         ),
                         backgroundColor:
-                            MaterialStateProperty.all(Colors.black),
+                            MaterialStateProperty.all(Colors.white70),
                       ),
                       onPressed: () {},
                       child: const Text(
                         'Login ',
                         style: TextStyle(
                           fontSize: 30,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                       ),
                     ),

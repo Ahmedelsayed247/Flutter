@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widget/widget.dart';
+import '../widget/CustomizedButton.dart';
 
 class Start_Page extends StatefulWidget {
   const Start_Page({Key? key}) : super(key: key);
@@ -22,46 +22,49 @@ class _Start_PageState extends State<Start_Page> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
-      body: Container(
-        child: Column(children: [
-          Row(
-            children: [
-              Container(
-                height: 500,
-                width: MediaQuery.of(context).size.width,
-                child: Image.asset("assets/images/4.png"),
-              )
-            ],
-          ),
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          color: Colors.blue,
+          child: Column(children: [
+            Row(
+              children: [
+                Container(
+                 // color: Colors.blue.shade900,
+                  height: MediaQuery.of(context).size.height/1.35,
+                  width: MediaQuery.of(context).size.width,
+                  child: Image.asset("assets/images/4.png",fit: BoxFit.cover,),
+                )
+              ],
+            ),
 
-          // SizedBox(height: 20, ),
-          Row(
-            children: [
-              CustomizedButton(
-                buttonText: "Student",
-                textColor: Colors.white,
-                buttonColor: Colors.black,
-                onPressed: () {
-                  SelectScren("Student");
-                },
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              CustomizedButton(
-                buttonText: "Doctor",
-                textColor: Colors.black,
-                buttonColor: Colors.white,
-                onPressed: () {
-                  SelectScren("Doctor");
-                },
-              ),
-            ],
-          )
-        ]),
+            // SizedBox(height: 20, ),
+            Row(
+              children: [
+                CustomizedButton(
+                  buttonText: "Student",
+                  textColor: Colors.white,
+                  buttonColor: Colors.black,
+                  onPressed: () {
+                    SelectScren("Student");
+                  },
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                CustomizedButton(
+                  buttonText: "Doctor",
+                  textColor: Colors.black,
+                  buttonColor: Colors.white,
+                  onPressed: () {
+                    SelectScren("Doctor");
+                  },
+                ),
+              ],
+            )
+          ]),
+        ),
       ),
     );
   }

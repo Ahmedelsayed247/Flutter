@@ -7,20 +7,18 @@ class Sign_In_Student extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        //backgroundColor: Colors.blue,
-        appBar: AppBar(
-          title: const Text(' Student Login'),
-          centerTitle: true,
-          backgroundColor: Colors.blue,
-        ),
+    return
+      SafeArea(
+          child:Scaffold(
+        backgroundColor: Colors.blue,
+
         body: SingleChildScrollView(
           child: Container(
             width: double.infinity,
-            decoration: const BoxDecoration(
+            decoration:  BoxDecoration(
                 gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-              Colors.red,
-              Colors.green,
+              Colors.blue.shade100,
+              Colors.blue.shade900,
               Colors.blue,
               // Colors.blue.shade900,
               // Colors.blue.shade200,
@@ -55,7 +53,9 @@ class Sign_In_Student extends StatelessWidget {
               ],
             ),
           ),
-        ));
+        ),
+          ),
+      );
   }
 }
 
@@ -74,10 +74,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     TextEditingController email = TextEditingController();
     TextEditingController password = TextEditingController();
     return Container(
+
       alignment: Alignment.center,
       width: MediaQuery.of(context).size.width,
       // height:MediaQuery.of(context).size.height ,
-      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      margin: const EdgeInsets.symmetric( horizontal: 10,vertical: 50),
       padding: const EdgeInsets.all(20),
       decoration: const BoxDecoration(
         color: Colors.white30,
@@ -150,7 +151,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               borderRadius: BorderRadius.circular(30.0)),
                         ),
                         backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
+                        MaterialStateProperty.all(Colors.white70),
+
                       ),
                       onPressed: () {},
                       child: const Text(
