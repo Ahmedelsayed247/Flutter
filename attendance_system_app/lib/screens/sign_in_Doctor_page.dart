@@ -21,11 +21,11 @@ class _Sign_In_DoctorState extends State<Sign_In_Doctor> {
           body: SingleChildScrollView(
             child: Container(
               width: double.infinity,
-              decoration:  BoxDecoration(
+              decoration: BoxDecoration(
                   gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-                    Colors.blue.shade100,
-                    Colors.blue.shade900,
-                    Colors.blue,
+                Colors.blue.shade100,
+                Colors.blue.shade900,
+                Colors.blue,
                 // Colors.blue.shade900,
                 // Colors.blue.shade200,
                 // Colors.blue.shade900,
@@ -72,6 +72,12 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  void SelectScren(context) {
+    Navigator.of(context).pushNamed(
+      "After_sign_in_as_Doctor",
+    );
+  }
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -82,14 +88,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       alignment: Alignment.center,
       width: MediaQuery.of(context).size.width,
       // height:MediaQuery.of(context).size.height ,
-      margin: const EdgeInsets.symmetric( horizontal: 10,vertical: 50),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
       padding: const EdgeInsets.all(20),
 
-      decoration:  BoxDecoration(
-          backgroundBlendMode: BlendMode.luminosity,
-          borderRadius: BorderRadius.all(Radius.circular(60)),
+      decoration: BoxDecoration(
+        backgroundBlendMode: BlendMode.luminosity,
+        borderRadius: BorderRadius.all(Radius.circular(60)),
         color: Colors.white30,
-         ),
+      ),
       child: Form(
         key: _formKey,
         child: Padding(
@@ -100,7 +106,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: TextFormField(
-
                   controller: email,
                   decoration: const InputDecoration(
                     icon: Icon(
@@ -160,7 +165,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                         backgroundColor:
                             MaterialStateProperty.all(Colors.white70),
                       ),
-                      onPressed: () {},
+                      onPressed: () => SelectScren(context),
                       child: const Text(
                         'Login ',
                         style: TextStyle(

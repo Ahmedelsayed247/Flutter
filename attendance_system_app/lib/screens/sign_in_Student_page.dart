@@ -7,15 +7,13 @@ class Sign_In_Student extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-      SafeArea(
-          child:Scaffold(
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: Colors.blue,
-
         body: SingleChildScrollView(
           child: Container(
             width: double.infinity,
-            decoration:  BoxDecoration(
+            decoration: BoxDecoration(
                 gradient: LinearGradient(begin: Alignment.topCenter, colors: [
               Colors.blue.shade100,
               Colors.blue.shade900,
@@ -54,8 +52,8 @@ class Sign_In_Student extends StatelessWidget {
             ),
           ),
         ),
-          ),
-      );
+      ),
+    );
   }
 }
 
@@ -68,17 +66,21 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  void SelectScren(context) {
+    Navigator.of(context).pushNamed(
+      "After_sign_in_as_Student",
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     TextEditingController email = TextEditingController();
     TextEditingController password = TextEditingController();
     return Container(
-
       alignment: Alignment.center,
       width: MediaQuery.of(context).size.width,
       // height:MediaQuery.of(context).size.height ,
-      margin: const EdgeInsets.symmetric( horizontal: 10,vertical: 50),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
       padding: const EdgeInsets.all(20),
       decoration: const BoxDecoration(
         color: Colors.white30,
@@ -151,10 +153,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               borderRadius: BorderRadius.circular(30.0)),
                         ),
                         backgroundColor:
-                        MaterialStateProperty.all(Colors.white70),
-
+                            MaterialStateProperty.all(Colors.white70),
                       ),
-                      onPressed: () {},
+                      onPressed: () => SelectScren(context),
                       child: const Text(
                         'Login ',
                         style: TextStyle(
